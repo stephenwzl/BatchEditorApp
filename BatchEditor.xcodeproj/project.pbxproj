@@ -7,13 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		530583C71CBCA290000D1F09 /* JSONTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 530583C61CBCA290000D1F09 /* JSONTree.m */; };
+		530583CE1CBCDA2E000D1F09 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 530583CC1CBCDA2E000D1F09 /* EditViewController.m */; };
+		530583CF1CBCDA2E000D1F09 /* EditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 530583CD1CBCDA2E000D1F09 /* EditViewController.xib */; };
 		5337739F1CBB940400ABB57A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5337739E1CBB940400ABB57A /* AppDelegate.m */; };
 		533773A21CBB940400ABB57A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 533773A11CBB940400ABB57A /* main.m */; };
 		533773A41CBB940400ABB57A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 533773A31CBB940400ABB57A /* Assets.xcassets */; };
 		533773A71CBB940400ABB57A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 533773A51CBB940400ABB57A /* MainMenu.xib */; };
+		533773B11CBB946900ABB57A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 533773AF1CBB946900ABB57A /* MainViewController.m */; };
+		533773B21CBB946900ABB57A /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 533773B01CBB946900ABB57A /* MainViewController.xib */; };
+		533773BE1CBB9D7200ABB57A /* NSString+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 533773BD1CBB9D7200ABB57A /* NSString+JSON.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		530583C51CBCA290000D1F09 /* JSONTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTree.h; sourceTree = "<group>"; };
+		530583C61CBCA290000D1F09 /* JSONTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTree.m; sourceTree = "<group>"; };
+		530583CB1CBCDA2E000D1F09 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
+		530583CC1CBCDA2E000D1F09 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
+		530583CD1CBCDA2E000D1F09 /* EditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditViewController.xib; sourceTree = "<group>"; };
 		5337739A1CBB940400ABB57A /* BatchEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BatchEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5337739D1CBB940400ABB57A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5337739E1CBB940400ABB57A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -21,6 +32,11 @@
 		533773A31CBB940400ABB57A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		533773A61CBB940400ABB57A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		533773A81CBB940400ABB57A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		533773AE1CBB946900ABB57A /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		533773AF1CBB946900ABB57A /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		533773B01CBB946900ABB57A /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		533773BC1CBB9D7200ABB57A /* NSString+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JSON.h"; sourceTree = "<group>"; };
+		533773BD1CBB9D7200ABB57A /* NSString+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JSON.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +75,11 @@
 				533773A51CBB940400ABB57A /* MainMenu.xib */,
 				533773A81CBB940400ABB57A /* Info.plist */,
 				533773A01CBB940400ABB57A /* Supporting Files */,
+				533773B31CBB946D00ABB57A /* viewcontrollers */,
+				533773BC1CBB9D7200ABB57A /* NSString+JSON.h */,
+				533773BD1CBB9D7200ABB57A /* NSString+JSON.m */,
+				530583C51CBCA290000D1F09 /* JSONTree.h */,
+				530583C61CBCA290000D1F09 /* JSONTree.m */,
 			);
 			path = BatchEditor;
 			sourceTree = "<group>";
@@ -69,6 +90,19 @@
 				533773A11CBB940400ABB57A /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		533773B31CBB946D00ABB57A /* viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				533773AE1CBB946900ABB57A /* MainViewController.h */,
+				533773AF1CBB946900ABB57A /* MainViewController.m */,
+				533773B01CBB946900ABB57A /* MainViewController.xib */,
+				530583CB1CBCDA2E000D1F09 /* EditViewController.h */,
+				530583CC1CBCDA2E000D1F09 /* EditViewController.m */,
+				530583CD1CBCDA2E000D1F09 /* EditViewController.xib */,
+			);
+			name = viewcontrollers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,6 +136,7 @@
 				TargetAttributes = {
 					533773991CBB940400ABB57A = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 9SR35Y6UHD;
 					};
 				};
 			};
@@ -129,6 +164,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				533773A41CBB940400ABB57A /* Assets.xcassets in Resources */,
+				530583CF1CBCDA2E000D1F09 /* EditViewController.xib in Resources */,
+				533773B21CBB946900ABB57A /* MainViewController.xib in Resources */,
 				533773A71CBB940400ABB57A /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,7 +177,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				533773BE1CBB9D7200ABB57A /* NSString+JSON.m in Sources */,
 				533773A21CBB940400ABB57A /* main.m in Sources */,
+				533773B11CBB946900ABB57A /* MainViewController.m in Sources */,
+				530583CE1CBCDA2E000D1F09 /* EditViewController.m in Sources */,
+				530583C71CBCA290000D1F09 /* JSONTree.m in Sources */,
 				5337739F1CBB940400ABB57A /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,6 +288,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = BatchEditor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = me.ele.stephenw.BatchEditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -259,6 +301,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = BatchEditor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = me.ele.stephenw.BatchEditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -283,6 +326,7 @@
 				533773AD1CBB940400ABB57A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
