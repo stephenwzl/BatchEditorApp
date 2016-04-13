@@ -114,21 +114,26 @@
   }
   return nil;
 }
-- (void)deleteNode:(JSONTree *)node {
-  JSONTree *originNode = [self findNodeInChildren:node];
+- (void)deleteNode:(JSONTree *)node parent:(JSONTree *)parent {
+  if (!parent) {
+    [self.children removeObject:node];
+    return;
+  }
+  JSONTree *originNode = [self findNodeInChildren:node parent:parent];
   if (!originNode) {
     for (JSONTree * item in self.children) {
-      [item deleteNode:node];
+      [item deleteNode:node parent:parent];
     }
   }
   else {
     [self.children removeObject:originNode];
   }
+  
 }
 
-- (JSONTree *)findNodeInChildren:(JSONTree *)node {
+- (JSONTree *)findNodeInChildren:(JSONTree *)node parent:(JSONTree *)parent {
   for (JSONTree *item in self.children) {
-    if (item.rawType == node.rawType && [item.rawValue isEqual:node.rawValue] && [item.rawKey isEqualToString:node.rawKey]) {
+    if (item.rawType == node.rawType && [item.rawValue isEqual:node.rawValue] && [item.rawKey isEqualToString:node.rawKey] && [parent isEqual:self]) {
       return item;
     }
   }

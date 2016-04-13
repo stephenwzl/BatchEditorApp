@@ -31,6 +31,7 @@
 - (void)doubleClicked {
   NSInteger row = [self.outlineView clickedRow];
   __block JSONTree *node = [self.outlineView itemAtRow:row];
+  JSONTree *parentNode = [self.outlineView parentForItem:node];
   EditViewController *editVC = [[EditViewController alloc] initWithNibName:@"EditViewController" bundle:nil];
   editVC.node = node;
   __weak typeof(self) weakSelf = self;
@@ -41,7 +42,7 @@
     [weakSelf viewToJSONString];
   }];
   [editVC setDidDeleteBlock:^{
-    [data deleteNode:node];
+    [data deleteNode:node parent:parentNode];
     [weakSelf.outlineView reloadData];
     [weakSelf viewToJSONString];
   }];
@@ -90,6 +91,9 @@
 }
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item {
+  if (item == nil) {
+    return self.data.children.count > 0;
+  }
   if ([outlineView parentForItem:item] == nil) {
     return YES;
   }
@@ -120,13 +124,4 @@
   view.textField.stringValue = [item description];
   return view;
 }
-
-- (BOOL)outlineView:(NSOutlineView *)outlineView shouldEditTableColumn:(NSTableColumn *)tableColumn item:(id)item {
-  if ([item children].count == 0 && [item rawType] == JSONTreeTypeKV) {
-    NSLog(@"YES");
-    return YES;
-  }
-  return NO;
-}
-
 @end
