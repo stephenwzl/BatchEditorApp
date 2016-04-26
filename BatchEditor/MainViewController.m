@@ -10,12 +10,14 @@
 #import "NSString+JSON.h"
 #import "JSONTree.h"
 #import "EditViewController.h"
+//#import "BatchEditor-Swift.h"
 @interface MainViewController ()<NSOutlineViewDataSource,NSOutlineViewDelegate>
 
 @property (unsafe_unretained) IBOutlet NSTextView *textView;
 @property (weak) IBOutlet NSOutlineView *outlineView;
 @property (nonatomic, strong) JSONTree *data;
 @property (weak) IBOutlet NSButton *isPretty;
+@property (weak) IBOutlet NSMenu *contextMenu;
 @end
 
 @implementation MainViewController
@@ -122,6 +124,28 @@
   NSTableCellView *view = [outlineView makeViewWithIdentifier:@"datacell" owner:self];
 
   view.textField.stringValue = [item description];
+  [view setMenu:self.contextMenu];
   return view;
 }
+
+- (void)outlineView:(NSOutlineView *)outlineView didClickTableColumn:(NSTableColumn *)tableColumn {
+  NSLog(@"%@",tableColumn);
+}
+
+#pragma mark action
+- (IBAction)copyJSONText:(NSMenuItem *)sender {
+  JSONTree *node = [self.outlineView itemAtRow:[self.outlineView selectedRow]];
+  NSPasteboard *pasteBoard = [NSPasteboard generalPasteboard];
+  NSData *data;
+  if (node.rawType == JSONTreeTypeArray || node.rawType == JSONTreeTypeDictionary) {
+    data = [NSJSONSerialization dataWithJSONObject:[node jsonObject] options:NSJSONWritingPrettyPrinted error:nil];
+  }
+  else {
+    data = [NSJSONSerialization dataWithJSONObject:@{node.rawKey: [node jsonObject]} options:NSJSONWritingPrettyPrinted error:nil];
+  }
+  NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+  [pasteBoard declareTypes:@[NSStringPboardType] owner:nil];
+  [pasteBoard setString:string forType:NSStringPboardType];
+}
+
 @end
