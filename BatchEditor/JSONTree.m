@@ -114,6 +114,18 @@
   }
   return nil;
 }
+
+- (NSString *)jsonTextWithPretty:(NSJSONWritingOptions)option {
+  NSData *data;
+  if (self.rawType == JSONTreeTypeArray || self.rawType == JSONTreeTypeDictionary) {
+    data = [NSJSONSerialization dataWithJSONObject:[self jsonObject] options:option error:nil];
+  }
+  else {
+    data = [NSJSONSerialization dataWithJSONObject:@{self.rawKey: [self jsonObject]} options:option error:nil];
+  }
+  NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+  return string;
+}
 - (void)deleteNode:(JSONTree *)node parent:(JSONTree *)parent {
   if (!parent) {
     [self.children removeObject:node];

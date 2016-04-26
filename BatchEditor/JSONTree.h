@@ -30,5 +30,6 @@ typedef NS_ENUM(NSInteger , JSONTreeType) {
 
 - (instancetype)initWithObject:(id)object;
 - (id)jsonObject;
+- (NSString *)jsonTextWithPretty:(NSJSONWritingOptions)option;
 - (void)deleteNode:(JSONTree *)node parent:(JSONTree *)parent;
 @end

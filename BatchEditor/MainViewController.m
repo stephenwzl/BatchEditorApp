@@ -134,18 +134,19 @@
 
 #pragma mark action
 - (IBAction)copyJSONText:(NSMenuItem *)sender {
+  NSJSONWritingOptions writeOption = self.isPretty.state == 1 ? NSJSONWritingPrettyPrinted : 0;
   JSONTree *node = [self.outlineView itemAtRow:[self.outlineView selectedRow]];
   NSPasteboard *pasteBoard = [NSPasteboard generalPasteboard];
-  NSData *data;
-  if (node.rawType == JSONTreeTypeArray || node.rawType == JSONTreeTypeDictionary) {
-    data = [NSJSONSerialization dataWithJSONObject:[node jsonObject] options:NSJSONWritingPrettyPrinted error:nil];
-  }
-  else {
-    data = [NSJSONSerialization dataWithJSONObject:@{node.rawKey: [node jsonObject]} options:NSJSONWritingPrettyPrinted error:nil];
-  }
-  NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+  NSString *string = [node jsonTextWithPretty:writeOption];
   [pasteBoard declareTypes:@[NSStringPboardType] owner:nil];
   [pasteBoard setString:string forType:NSStringPboardType];
+}
+- (IBAction)InspectNode:(id)sender {
+  NSJSONWritingOptions writeOption = self.isPretty.state == 1 ? NSJSONWritingPrettyPrinted : 0;
+  JSONTree *node = [self.outlineView itemAtRow:[self.outlineView selectedRow]];
+  NSString *string = [node jsonTextWithPretty:writeOption];
+  self.textView.string = string;
+  [self toVisualize:nil];
 }
 
 @end

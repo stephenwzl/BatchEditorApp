@@ -51,11 +51,11 @@
                 <scrollView autoresizesSubviews="NO" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GA9-YS-hKV">
                     <rect key="frame" x="393" y="20" width="567" height="520"/>
                     <clipView key="contentView" ambiguous="YES" id="Oyo-Fv-YHd">
-                        <rect key="frame" x="1" y="1" width="565" height="503"/>
+                        <rect key="frame" x="1" y="1" width="565" height="518"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="gsW-oc-DMN" id="dNU-Fg-ovZ">
-                                <rect key="frame" x="0.0" y="0.0" width="566" height="503"/>
+                                <rect key="frame" x="0.0" y="0.0" width="565" height="518"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -103,8 +103,8 @@
                         </subviews>
                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </clipView>
-                    <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.5" horizontal="YES" id="P65-m9-fU3">
-                        <rect key="frame" x="1" y="504" width="565" height="15"/>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="0.5" horizontal="YES" id="P65-m9-fU3">
+                        <rect key="frame" x="-7" y="-14" width="0.0" height="15"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="KaI-Os-lhX">
@@ -147,14 +147,20 @@
         </customView>
         <menu id="Apc-Hh-LIW">
             <items>
-                <menuItem title="copy JSON Text" id="bOE-2X-I91">
+                <menuItem title="Copy JSON Text" id="bOE-2X-I91">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="copyJSONText:" target="-2" id="We7-LB-30R"/>
                     </connections>
                 </menuItem>
+                <menuItem title="Inspect This Node" id="HEV-sB-yQ0">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="InspectNode:" target="-2" id="GVX-eE-YQ3"/>
+                    </connections>
+                </menuItem>
             </items>
-            <point key="canvasLocation" x="876.5" y="949.5"/>
+            <point key="canvasLocation" x="876" y="949.5"/>
         </menu>
     </objects>
 </document>
