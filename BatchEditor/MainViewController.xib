@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="MainViewController">
             <connections>
                 <outlet property="contextMenu" destination="Apc-Hh-LIW" id="LMd-Wg-FaW"/>
+                <outlet property="expandAll" destination="Wyt-Hz-hhM" id="L07-qm-G0y"/>
                 <outlet property="isPretty" destination="eIG-lt-fcD" id="RxG-Y3-jm0"/>
                 <outlet property="outlineView" destination="dNU-Fg-ovZ" id="wbh-ZY-kDJ"/>
                 <outlet property="textView" destination="9ji-1f-SnV" id="d5h-cz-OnG"/>
@@ -133,13 +134,23 @@
                     </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eIG-lt-fcD">
-                    <rect key="frame" x="320" y="320" width="61" height="18"/>
-                    <buttonCell key="cell" type="check" title="pretty" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="RtM-ZB-tje">
+                    <rect key="frame" x="314" y="320" width="73" height="18"/>
+                    <buttonCell key="cell" type="check" title="Pretty" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="RtM-ZB-tje">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
                         <action selector="changePretty:" target="-2" id="rc1-xw-U1J"/>
+                    </connections>
+                </button>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wyt-Hz-hhM">
+                    <rect key="frame" x="314" y="263" width="73" height="32"/>
+                    <buttonCell key="cell" type="check" title="Expand" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="awi-4b-rg8">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="expandAll:" target="-2" id="4YX-Mn-bOS"/>
                     </connections>
                 </button>
             </subviews>

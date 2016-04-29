@@ -18,6 +18,7 @@
 @property (nonatomic, strong) JSONTree *data;
 @property (weak) IBOutlet NSButton *isPretty;
 @property (weak) IBOutlet NSMenu *contextMenu;
+@property (weak) IBOutlet NSButton *expandAll;
 @end
 
 @implementation MainViewController
@@ -62,6 +63,9 @@
   if ([str isJSON]) {
     self.data = [[JSONTree alloc] initWithObject:[str toJSON]];
     [self.outlineView reloadData];
+    if (self.expandAll.state == 1) {
+      [self.outlineView expandItem:nil expandChildren:YES];
+    }
   }
 }
 - (IBAction)toJSONString:(id)sender {
@@ -147,6 +151,14 @@
   NSString *string = [node jsonTextWithPretty:writeOption];
   self.textView.string = string;
   [self toVisualize:nil];
+}
+- (IBAction)expandAll:(NSButton *)sender {
+  if (sender.state == 1) {
+    [self.outlineView expandItem:nil expandChildren:YES];
+  }
+  else {
+    [self.outlineView collapseItem:nil collapseChildren:YES];
+  }
 }
 
 @end
