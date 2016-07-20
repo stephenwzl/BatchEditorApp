@@ -15,13 +15,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
   func applicationDidFinishLaunching(aNotification: NSNotification) {
-    // Insert code here to initialize your application
+    configWindowAppearance()
   }
-
-  func applicationWillTerminate(aNotification: NSNotification) {
-    // Insert code here to tear down your application
+  
+  func configWindowAppearance() {
+    self.window.restorable = true
+    self.window.titlebarAppearsTransparent = true
+    self.window.contentViewController = EditorViewController(nibName: "EditorViewController", bundle: nil)
   }
-
-
+  
+  func applicationShouldHandleReopen(sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+    if flag {
+      return false
+    } else {
+      self.window.makeKeyAndOrderFront(self)
+      return true
+    }
+  }
 }
 

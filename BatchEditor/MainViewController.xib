@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MainViewController" customModule="BatchEditor" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundBottomView" destination="vwh-FQ-FsM" id="mmq-ja-ST9"/>
+                <outlet property="backgroundView" destination="eVi-dU-paW" id="v5k-1c-dd3"/>
+                <outlet property="hintLabel" destination="qZt-E9-M7c" id="6bY-hD-EgI"/>
+                <outlet property="textView" destination="c8y-b8-ubk" id="ICA-Ua-KTx"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView placeholderIntrinsicWidth="360" placeholderIntrinsicHeight="360" id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="360"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <visualEffectView appearanceType="vibrantDark" fixedFrame="YES" blendingMode="behindWindow" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="eVi-dU-paW">
+                    <rect key="frame" x="0.0" y="180" width="360" height="180"/>
+                </visualEffectView>
+                <visualEffectView appearanceType="vibrantLight" fixedFrame="YES" blendingMode="behindWindow" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="vwh-FQ-FsM">
+                    <rect key="frame" x="0.0" y="0.0" width="360" height="180"/>
+                    <subviews>
+                        <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNK-2O-owy">
+                            <rect key="frame" x="0.0" y="30" width="360" height="150"/>
+                            <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="nOP-3a-tmd">
+                                <rect key="frame" x="0.0" y="0.0" width="360" height="150"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <textView focusRingType="none" ambiguous="YES" importsGraphics="NO" findStyle="panel" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" smartInsertDelete="YES" id="c8y-b8-ubk" customClass="MainTextView" customModule="BatchEditor" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="360" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="minSize" width="360" height="150"/>
+                                        <size key="maxSize" width="480" height="10000000"/>
+                                        <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <size key="minSize" width="360" height="150"/>
+                                        <size key="maxSize" width="480" height="10000000"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </clipView>
+                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="FAh-Zv-Qb6">
+                                <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </scroller>
+                            <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="wgb-oM-Ada">
+                                <rect key="frame" x="-100" y="-100" width="15" height="178"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </scroller>
+                        </scrollView>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qZt-E9-M7c">
+                            <rect key="frame" x="121" y="82" width="119" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" placeholderString="Click Below To Edit" id="AYZ-HL-Nx2">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                </visualEffectView>
+            </subviews>
+            <point key="canvasLocation" x="713" y="431"/>
+        </customView>
+    </objects>
+</document>
