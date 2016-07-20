@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="AboutWindow" customModule="Batch" customModuleProvider="target">
+            <connections>
+                <outlet property="versionLabel" destination="r0H-Rn-Fpn" id="Xci-DH-p1s"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" fullSizeContentView="YES"/>
+            <rect key="contentRect" x="455" y="240" width="300" height="300"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <view key="contentView" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <visualEffectView appearanceType="vibrantLight" blendingMode="behindWindow" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="BNO-cI-VqQ">
+                        <rect key="frame" x="0.0" y="-6" width="300" height="306"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w5i-Ca-jlZ">
+                                <rect key="frame" x="86" y="158" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="IpM-sX-3PJ"/>
+                                    <constraint firstAttribute="height" constant="128" id="ird-mU-TRL"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="app-icon" id="FSq-wA-H4A"/>
+                            </imageView>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kO7-59-zux">
+                                <rect key="frame" x="18" y="20" width="264" height="34"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Copyright © 2016年 stephenw.cc. All rights reserved." id="ANV-vn-w2s">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="r0H-Rn-Fpn">
+                                <rect key="frame" x="18" y="133" width="264" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="BatchEditor v2.0 build 1" id="QMT-bF-sBh">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qCx-QA-MGt">
+                                <rect key="frame" x="72" y="97" width="157" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="75s-U0-EqY"/>
+                                    <constraint firstAttribute="height" constant="21" id="qzd-8D-ina"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Check For Updates" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Zuw-K4-wau">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="checkUpdate:" target="-2" id="yRH-hf-8xx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kO7-59-zux" secondAttribute="trailing" constant="20" id="AjI-pv-aV0"/>
+                            <constraint firstAttribute="bottom" secondItem="kO7-59-zux" secondAttribute="bottom" constant="20" id="LRd-n5-jKr"/>
+                            <constraint firstItem="r0H-Rn-Fpn" firstAttribute="leading" secondItem="BNO-cI-VqQ" secondAttribute="leading" constant="20" id="NKM-uP-SY1"/>
+                            <constraint firstItem="qCx-QA-MGt" firstAttribute="top" secondItem="r0H-Rn-Fpn" secondAttribute="bottom" constant="8" id="QSk-9g-zVW"/>
+                            <constraint firstItem="r0H-Rn-Fpn" firstAttribute="top" secondItem="w5i-Ca-jlZ" secondAttribute="bottom" constant="8" id="Vkc-dR-beg"/>
+                            <constraint firstItem="w5i-Ca-jlZ" firstAttribute="centerX" secondItem="BNO-cI-VqQ" secondAttribute="centerX" id="cAR-JN-0ua"/>
+                            <constraint firstItem="qCx-QA-MGt" firstAttribute="centerX" secondItem="BNO-cI-VqQ" secondAttribute="centerX" id="dJr-km-C4W"/>
+                            <constraint firstAttribute="trailing" secondItem="r0H-Rn-Fpn" secondAttribute="trailing" constant="20" id="e6r-c9-1hI"/>
+                            <constraint firstItem="w5i-Ca-jlZ" firstAttribute="top" secondItem="BNO-cI-VqQ" secondAttribute="top" constant="20" id="xam-dR-W4T"/>
+                            <constraint firstItem="kO7-59-zux" firstAttribute="leading" secondItem="BNO-cI-VqQ" secondAttribute="leading" constant="20" id="xh1-aw-muR"/>
+                        </constraints>
+                    </visualEffectView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="BNO-cI-VqQ" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="7kE-tb-ANV"/>
+                    <constraint firstItem="BNO-cI-VqQ" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="hUB-hz-2ch"/>
+                    <constraint firstAttribute="trailing" secondItem="BNO-cI-VqQ" secondAttribute="trailing" id="kpE-oX-HxY"/>
+                    <constraint firstAttribute="bottom" secondItem="BNO-cI-VqQ" secondAttribute="bottom" constant="-6" id="lZQ-hU-ce6"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+            <point key="canvasLocation" x="817" y="485"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="app-icon" width="512" height="512"/>
+    </resources>
+</document>

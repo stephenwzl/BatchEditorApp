@@ -11,7 +11,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="BatchEditor" customModuleProvider="target">
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Batch" customModuleProvider="target">
             <connections>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
@@ -26,7 +26,7 @@
                             <menuItem title="About BatchEditor" id="5kV-Vb-QxS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="orderFrontStandardAboutPanel:" target="-1" id="Exp-CZ-Vem"/>
+                                    <action selector="showAboutWindow:" target="Voe-Tx-rLC" id="G7m-Nu-jh1"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
@@ -90,15 +90,14 @@
             </items>
         </menu>
         <window identifier="mainwindow" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="mainwindow" animationBehavior="default" id="QvC-M9-y7g">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" fullSizeContentView="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="465" y="338" width="360" height="360"/>
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
+            <rect key="contentRect" x="465" y="338" width="480" height="360"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="360" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
             </view>
-            <point key="canvasLocation" x="358" y="498"/>
+            <point key="canvasLocation" x="601" y="687"/>
         </window>
     </objects>
 </document>

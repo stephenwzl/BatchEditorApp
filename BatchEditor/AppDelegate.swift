@@ -12,10 +12,13 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
   @IBOutlet weak var window: NSWindow!
-
+  var aboutWindow:NSWindowController?
 
   func applicationDidFinishLaunching(aNotification: NSNotification) {
     configWindowAppearance()
+    DataCenter.sharedDataCenter.checkforUpdate { (needUpdate, url) in
+      
+    }
   }
   
   func configWindowAppearance() {
@@ -31,6 +34,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       self.window.makeKeyAndOrderFront(self)
       return true
     }
+  }
+  @IBAction func showAboutWindow(sender: AnyObject) {
+    if self.aboutWindow == nil {
+      self.aboutWindow = AboutWindow(windowNibName: "AboutWindow")
+      self.aboutWindow?.window?.titlebarAppearsTransparent = true
+    }
+    self.aboutWindow?.window?.makeKeyAndOrderFront(self)
   }
 }
 

@@ -137,6 +137,9 @@ extension EditorViewController {
   func doubleClicked() {
     let row = self.outlineView.clickedRow
     var item = self.outlineView.itemAtRow(row) as? JSONTree
+    if item == nil {
+      return
+    }
     let parent = self.outlineView.parentForItem(item) as? JSONTree
     let modifyViewcontroller = ModifyViewController(nibName: "ModifyViewController", bundle: nil)
     modifyViewcontroller?.node = item
