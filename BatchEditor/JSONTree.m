@@ -64,18 +64,17 @@
   if (self.children.count > 0) {
     return self.rawKey;
   }
-//  if (self.rawType == JSONTreeTypeDictionary ||
-//      self.rawType == JSONTreeTypeBatchDictonary) {
-//    return self.rawKey;
-//  }
   if ([self.rawKey containsString:@"array object"]) {
     return [NSString stringWithFormat:@"%@ : %lu elements",self.rawKey,(unsigned long)self.children.count];
   }
   if (self.rawType != JSONTreeTypeKV && self.children.count == 0) {
     return [NSString stringWithFormat:@"%@ : 0 elements",self.rawKey];
   }
-  
-  return [NSString stringWithFormat:@"%@ : %@",self.rawKey, self.rawValue];
+  NSString *value = [NSString stringWithFormat:@"%@",self.rawValue];
+  if ([value containsString:@"%"]) {
+    value = [value stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+  }
+  return [NSString stringWithFormat:@"%@ : %@",self.rawKey, value];
 }
 
 - (id)jsonObject {
